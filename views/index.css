@@ -1,0 +1,185 @@
+:root {
+    --primary: #355C7D;
+    --secondary: #6C5B7B;
+    --accent: #F67280;
+    --light: #FFB195;
+    --dark: #C06C84;
+  }
+  
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    min-height: 100vh;
+    /* Prevent overflow on mobile */
+    min-height: -webkit-fill-available;
+    background: linear-gradient(135deg, var(--light), var(--accent), var(--dark), var(--secondary), var(--primary));
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
+    /* Prevent bounce scrolling on iOS */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for mobile viewport height */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      min-height: -webkit-fill-available;
+    }
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    /* Better touch scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  h1 {
+    color: var(--light);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  label {
+    color: var(--light);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  /* Make inputs larger and easier to tap */
+  input {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 16px; /* Prevent zoom on iOS */
+    transition: all 0.3s ease;
+    /* Remove default mobile styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* Prevent zoom on focus for iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Make submit button larger and easier to tap */
+  input[type="submit"] {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    min-height: 3.5rem; /* Minimum tappable area */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  
+  /* Remove hover effects on touch devices */
+  @media (hover: hover) {
+    input[type="submit"]:hover {
+      background-color: var(--dark);
+      transform: translateY(-2px);
+    }
+  
+    input[type="submit"]:active {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 480px) {
+    body {
+      padding: 1rem;
+    }
+  
+    .container {
+      padding: 1.25rem;
+      margin: 1rem;
+      width: calc(100% - 2rem);
+    }
+  
+    form {
+      gap: 1rem;
+    }
+  
+    /* Larger touch targets for mobile */
+    input {
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    /* Stack form elements vertically on mobile */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .container {
+      margin: 2rem;
+      padding: 2rem;
+    }
+  }
+  
+  /* Landscape orientation fixes */
+  @media (max-height: 500px) and (orientation: landscape) {
+    body {
+      align-items: flex-start;
+    }
+    
+    .container {
+      margin: 1rem auto;
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .container {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
