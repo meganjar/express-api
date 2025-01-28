@@ -1,0 +1,121 @@
+:root {
+  --primary: #355c7d;
+  --secondary: #6c5b7b;
+  --accent: #f67280;
+  --light: #ffb195;
+  --dark: #c06c84;
+  --text-color: white;
+  --bg-color: #355c7d;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+nav {
+  background: var(--secondary);
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  background-color: white;
+  color: black;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  color: black;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: var(--primary);
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+}

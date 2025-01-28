@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Expenses</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/expenses">Expenses</a></li>
+            <li><a href="/monthlyexpenses">MonthlyExpenses</a></li>
+        </ul>
+    </nav>
+
+    <h1>Monthly Expenses</h1>
+
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (monthlyTotals && Object.keys(monthlyTotals).length > 0) { %>
+                    <% Object.entries(monthlyTotals).forEach(([month, total]) => { %>
+                        <tr>
+                            <td><%= month %></td>
+                            <td><%= total %></td>
+                        </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="2">No expenses available</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html> -->

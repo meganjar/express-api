@@ -41,4 +41,4 @@ const totals = [
     }
   ];
   
-module.exports = totals;
+export default totals

@@ -3,25 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="styles.css" />
 
-    <title>Document</title>
+    <title>Home</title>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/expenses">Expenses</a></li>
+        <!-- <li><a href="/monthlyexpenses">Monthly Expenses</a></li> -->
       </ul>
     </nav>
     <div>
       <h1>Home Page</h1>
-      <form action="/create-expense" method="POST">
-        <label for="img-input">Image</label>
-        <input type="image" name="image" id="img-input" />
-        <label for="total">Total</label>
-        <input type="number" name="total" id="total" />
-        <input type="submit" name="submit" id="submit" />
+      <% if (errors && errors.length > 0) { %>
+      <div class="error-messages">
+        <ul>
+          <% errors.forEach(error => { %>
+          <li><%= error %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+      <form
+        action="/create-expenses"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <label for="transaction_date">Transaction Date:</label>
+        <input
+          type="date"
+          name="transaction_date"
+          id="transaction_date"
+          required
+        />
+
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" id="image" required />
+
+        <label for="total">Total:</label>
+        <input type="number" name="total" id="total" step="0.01" required />
+
+        <button type="submit">Submit</button>
       </form>
     </div>
   </body>

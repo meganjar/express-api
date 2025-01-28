@@ -13,14 +13,15 @@ const port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 // Middleware
 app.use(express.static("public"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
-
-// Use modular routes
+app.use("/uploads", express.static("uploads"));
+// modular routes
 app.use("/expenses", expenseDataRoutes); 
-app.use("/create", createExpensesRoutes); 
+app.use("/create-expenses", createExpensesRoutes); 
+app.use("/monthly-expenses", expenseDataRoutes);
 app.use("/", homeRoutes);
 
 // Start server

@@ -3,38 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <rel="stylesheet" href="index.css" />
-
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Expenses</title>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/expenses">Expenses</a></li>
+        <!-- <li><a href="/monthlyexpenses">MonthlyExpenses</a></li> -->
       </ul>
     </nav>
-   
-      <h1>
-        Expenses
-      </h1>
-      <div>
-        <table>
+
+    <h1>Expenses</h1>
+
+    <div>
+      <table border="1">
+        <thead>
           <tr>
             <th>ID</th>
             <th>Transaction Date</th>
             <th>Total</th>
           </tr>
-        
-            <td>j<%= transaction %></td>
-            <td>h<%= transaction %></td>
-      <td>;</td>
-           
+        </thead>
+        <tbody>
+          <% if (receipts && receipts.length > 0) { %> <%
+          receipts.forEach(receipt => { %>
           <tr>
-            
+            <td><%= receipt.ID %></td>
+            <td><%= receipt.transaction_date %></td>
+            <td>
+              <% let matchingTotal = totals.find(total => total.id ===
+              receipt.ID); %> <%= matchingTotal ? matchingTotal.total : 'N/A' %>
+            </td>
           </tr>
-         
-        </table>
+          <% }) %> <% } else { %>
+          <tr>
+            <td colspan="3">No receipts available</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
