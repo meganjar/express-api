@@ -1,11 +1,9 @@
 // {"links":[{"href":"/api","rel":"api","type":"GET"}]}
 
+app.use((err, req, res, next) => {
 
-function error(status, msg) {
-    var err = new Error(msg);
-    err.status = status;
-    return err;
-  }
+  console.error(err.stack);
   
-  module.exports = error;
+  res.status(500).send('Something broke!');
   
+  });

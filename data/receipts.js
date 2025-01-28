@@ -1,4 +1,4 @@
-module.exports = receipts;
+
 
 const receipts =  [
     {
@@ -52,3 +52,5 @@ const receipts =  [
       image_name: "image10.jpg"
     }
   ];
+
+  module.exports = receipts
