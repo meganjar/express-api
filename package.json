@@ -9,9 +9,14 @@
   "author": "meganjar",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.9",
-    "pug": "^3.0.3"
+    "pug": "^3.0.3",
+    "tesseract.js": "^6.0.0"
   }
 }
